@@ -2,13 +2,15 @@
 
 namespace ChessAPIs.Models
 {
-    public class PlayerDetails
+    public class EnrollDetails
     {
         [Key]
-        public int PlayerID { get; set; }
+        public string EmailID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Country { get; set; }
+        public string PhoneNumber { get; set; }
+        public string FideId { get; set; }
+        public string FideRating { get; set; }
+        public string Level { get; set; }
     }
 }

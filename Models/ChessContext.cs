@@ -2,12 +2,12 @@
 
 namespace ChessAPIs.Models
 {
-    public class ChessContext: DbContext
+    public class ChessContext : DbContext
     {
-        public ChessContext(DbContextOptions<ChessContext> options): base(options)
+        public ChessContext(DbContextOptions<ChessContext> options) : base(options)
         {
         }
 
-        public DbSet<PlayerDetails> PlayerDetails { get; set;  } = null;
+        public DbSet<EnrollDetails> EnrollDetails { get; set; } = null;
     }
 }

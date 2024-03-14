@@ -17,13 +17,23 @@ namespace ChessApp.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PlayerDetails>>> GetPlayers()
+        public async Task<ActionResult<IEnumerable<EnrollDetails>>> GetPlayers()
         {
-            if(_dbContext.PlayerDetails == null)
+            if (_dbContext.EnrollDetails == null)
             {
                 return NotFound();
             }
-            return await _dbContext.PlayerDetails.ToListAsync();
+            return await _dbContext.EnrollDetails.ToListAsync();
+        }
+
+        [HttpPost]
+        [Route("EnrollPlayer")]
+        public async Task<ActionResult<EnrollDetails>> EnrollPlayer(EnrollDetails enrollDetails)
+        {
+            _dbContext.EnrollDetails.Add(enrollDetails);
+            await _dbContext.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetPlayers), new { id = enrollDetails.EmailID }, enrollDetails);
         }
     }
 }

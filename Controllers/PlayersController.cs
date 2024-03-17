@@ -35,5 +35,20 @@ namespace ChessApp.Controllers
 
             return CreatedAtAction(nameof(GetPlayers), new { id = enrollDetails.EmailID }, enrollDetails);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePlayer(int id)
+        {
+            var player = await _dbContext.EnrollDetails.FindAsync(id);
+            if (player == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.EnrollDetails.Remove(player);
+            await _dbContext.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

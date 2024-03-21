@@ -33,17 +33,20 @@ namespace ChessApp.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FideID")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("FideID")
+                        .HasColumnType("int");
 
                     b.Property<int?>("FideRating")
                         .HasColumnType("int");
 
-                    b.Property<string>("FideRatingLevel")
+                    b.Property<string>("GameLevel")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -71,13 +74,19 @@ namespace ChessApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentID"), 1L, 1);
 
-                    b.Property<string>("FideID")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("FideID")
+                        .HasColumnType("int");
 
                     b.Property<int?>("FideRating")
                         .HasColumnType("int");
 
-                    b.Property<string>("FideRatingLevel")
+                    b.Property<string>("GameLevel")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Grade")

@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace ChessApp.Migrations
 {
-    public partial class studentprofessionaldb : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,12 +17,13 @@ namespace ChessApp.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Occupation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FideID = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FideID = table.Column<int>(type: "int", nullable: true),
                     FideRating = table.Column<int>(type: "int", nullable: true),
-                    FideRatingLevel = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    GameLevel = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,9 +42,11 @@ namespace ChessApp.Migrations
                     ParentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ParentEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FideID = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    FideID = table.Column<int>(type: "int", nullable: true),
                     FideRating = table.Column<int>(type: "int", nullable: true),
-                    FideRatingLevel = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    GameLevel = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

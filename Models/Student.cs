@@ -14,8 +14,10 @@ namespace ChessAPIs.Models
         public string ParentName { get; set; }
         public string ParentEmail { get; set; }
         public string PhoneNumber { get; set; }
-        public string? FideID { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
+        public int? FideID { get; set; }
         public int? FideRating { get; set; }
-        public string? FideRatingLevel { get; set; }
+        public string? GameLevel { get; set; }
     }
 }

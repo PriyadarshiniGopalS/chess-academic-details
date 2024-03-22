@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
         builder =>
         {
             builder
-            .WithOrigins("https://priyadarshinigopals.github.io/chess-app", "http://localhost:4200")
+            .WithOrigins("https://priyadarshinigopals.github.io", "http://localhost:4200")
             .AllowAnyMethod()
             .AllowAnyHeader();
         });
